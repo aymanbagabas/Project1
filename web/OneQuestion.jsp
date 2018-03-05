@@ -27,18 +27,18 @@
 
         %>
 
-        <title><%= title %></title>
+        <title><%= title%></title>
         <jsp:useBean class="project.Question" id="q" scope="page">
             <jsp:setProperty name="q" property="chapterNo" value="<%= request.getParameter("chapterNo")%>" />
             <jsp:setProperty name="q" property="questionNo" value="<%= request.getParameter("questionNo")%>" />
             <jsp:setProperty name="q" property="submittedAnswers" value="<%= request.getParameterValues("choices")%>" />
-            <jsp:setProperty name="q" property="remoteAddr" value="<%= request.getRemoteAddr() %>" />
+            <jsp:setProperty name="q" property="remoteAddr" value="<%= request.getRemoteAddr()%>" />
         </jsp:useBean>
         <jsp:setProperty name="q" property="*" />
     </head>
     <body>
         <script>
-            var json = JSON.parse('<%= q.getChapterQuestionJson() %>');
+            var json = JSON.parse('<%= q.getChapterQuestionJson()%>');
             function populate(s1, s2) {
                 var c = $(s1).val();
                 console.log(c);
@@ -49,10 +49,10 @@
             }
         </script>
         <h3 id="h3style" style="width: 500px auto; max-width: 620px; margin: 0 auto; ">
-            <%= title%> <% out.print((q.getChapterNo() != null) ? q.getChapterNo(): "");
-                           out.print((q.getChapterNo() != null && q.getQuestionNo() != null) ? ".":"");
-                           out.print((q.getQuestionNo() != null) ? q.getQuestionNo(): ""); 
-                        %>
+            <%= title%> <% out.print((q.getChapterNo() != null) ? q.getChapterNo() : "");
+                out.print((q.getChapterNo() != null && q.getQuestionNo() != null) ? "." : "");
+                out.print((q.getQuestionNo() != null) ? q.getQuestionNo() : "");
+            %>
         </h3>
         <div style="width: 500px auto; max-width: 620px; margin: 0 auto; border: 1px solid #f6912f; font-weight: normal ">
             <form method="post">
@@ -75,7 +75,9 @@
                         %>
                     </div>
                     <div id="choices">
-                        <%  if (q.getChapterNo() != null && q.getQuestionNo() != null) {
+                        <%  if (text.isEmpty() && (q.getChapterNo() != null || q.getQuestionNo() != null)) {
+                                out.println("Question not found!");
+                            } else if (q.getChapterNo() != null && q.getQuestionNo() != null) {
                                 String answers = q.getAnswerKey();
                                 int answersLen = answers.length();
                                 String type;
