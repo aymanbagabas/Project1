@@ -1,0 +1,13 @@
+#sectiontitle {background-color: yellow; color: navy; font-style: italic; padding-left: 1em}
+#choicemargin {margin-left:3.5em;text-indent:-3.5em}
+#questionnumber {font-family: "Arial Black", monospace; font-size: 100%; color: #800080; font-weight: bold}
+#question {font-family: monospace, Verdana, Helvetica, sans-serif; font-size: 100%; color: #8000f0; color: black; margin-right: 1.5em}
+#questionstatement {font-family: monospace, Verdana, Helvetica, sans-serif; font-size: 100%; color: #8000f0; color: black; margin-left:25.0pt;text-indent:-25.0pt}
+#choices {font-family: monospace, Verdana, Helvetica, sans-serif; font-size: 100%; color: #8000f0; color: black; margin-left:25.0pt; margin-left:25.0pt; text-indent: 2px}
+#choicelabel {font-family: monospace, Verdana, Helvetica, sans-serif; font-size: 100%; color: #600030}
+#choicestatement {font-family: monospace, Verdana, Helvetica, sans-serif; font-size: 100%; color: #600030; color: #8000f0; color: black}
+#code {font-family: monospace, sans-serif; font-size: 100%; color: #800080; font-weight: bold}
+@media print {
+  body {font-size: 12px}
+  h3 {font-size: 14px}
+}
