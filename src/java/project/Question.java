@@ -5,6 +5,7 @@
  */
 package project;
 
+import database.InitiateDb;
 import java.io.PrintWriter;
 import java.io.Serializable;
 import java.io.Writer;
@@ -378,7 +379,7 @@ public class Question implements Serializable{
     public void initDb() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            //connection = DriverManager.getConnection("jdbc:mysql://localhost/javabook", "scott", "tiger");
+//            connection = DriverManager.getConnection("jdbc:mysql://localhost/javabook", "scott", "tiger");
             connection = DriverManager.getConnection("jdbc:mysql://35.185.94.191/bagabas", "bagabas", "Ayman1996");
         } catch (Exception e) {
             e.printStackTrace();

@@ -111,7 +111,7 @@
                                         userChoices += c;
                                     }
                                     if (answers.equals(userChoices.toLowerCase())) {
-                                        out.println("<br><span style = \"color: green\">Your answer is correct <img src=\"correct.jpg\" border=\"0\" width=\"42\" height=\"30\"</img></span><br>");
+                                        out.println("<br><span style = \"color: green\">Your answer " + userChoices +" is correct <img src=\"correct.jpg\" border=\"0\" width=\"42\" height=\"30\"</img></span><br>");
                                     } else if (request.getParameterValues("choices").length != 0) {
                                         out.println("<br><span style = \"color: red\">Your answer " + userChoices + " is incorrect <img src=\"wrong.jpg\" border=\"0\" width=\"42\" height=\"30\"</img></span>");
                                         out.println("<div id = \"a1\" style = \"color: green\"> Click here to show the correct answer</div>");
